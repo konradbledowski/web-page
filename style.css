@@ -16,3 +16,8 @@ h1 {
   text-align: center;
   margin: 50px 300px 50px 300px;
 }
+hr {
+  height: 4px;
+  background-color: black;
+  border: none;
+}
