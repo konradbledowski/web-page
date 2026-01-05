@@ -1,5 +1,5 @@
 body {
-  background-color: rgb(35, 110, 100);
+  background-color: rgb(98, 128, 124);
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -12,7 +12,7 @@ h1 {
   color: brown;
   text-align: center;
 }
-#par_2 {
+.par_2 {
   text-align: center;
   margin: 50px 300px 50px 300px;
 }
