@@ -5,12 +5,6 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   background: linear-gradient(to right, #4d38d6, #d638af);
 }
-
-h1 {
-  color: darkblue;
-  text-align: center;
-}
-
 #par_1 {
   color: brown;
   text-align: center;
@@ -31,6 +25,7 @@ hr {
 }
 .main_h {
   background: linear-gradient(to right, #101d705c, #4810708c);
+  color: #eeeaea;
   border-radius: 40px;
   border-color: linear-gradient(90deg, #ff6ec7, #ff00ff); /* gradient różowy */
   box-shadow: 0 0 10px #ff6ec7, 0 0 20px #ff00ff, 0 0 30px #ff6ec7; /* neonowy glow */
@@ -43,13 +38,38 @@ hr {
   margin-bottom: 20px;
   padding: 20px; /* <-- opcjonalnie, żeby tekst nie przyklejał się do krawędzi */
   border: #d638aec4 solid 3px;
+  transition: 0.3s;
 }
-.main_h p {
-  font-size: 20px;
-  color: whitesmoke;
+/* Kontener linkujący cały div */
+.clickable-div {
+  display: flex; /* pozwala łatwo wycentrować zawartość */
+  justify-content: center; /* poziome wyśrodkowanie */
+  align-items: center; /* pionowe wyśrodkowanie */
+  color: inherit; /* zachowuje kolor z diva */
+  outline: none;
+  width: 100%; /* link zajmuje całą szerokość dostępnego miejsca */
 }
-.main_h h1 {
-  color: antiquewhite;
+
+/* Reset wszystkich stanów linku */
+.clickable-div:link,
+.clickable-div:visited,
+.clickable-div:hover,
+.clickable-div:active,
+.clickable-div:focus {
+  text-decoration: none !important;
+  color: inherit !important;
+  outline: none !important;
+}
+
+/* Wszystkie elementy wewnątrz linku */
+.clickable-div * {
+  text-decoration: none !important;
+  margin: 0; /* usuwa marginesy, żeby nie “uciekały” */
+}
+/* Hover efekt */
+.clickable-div:hover .main_h {
+  background-color: rgba(255, 255, 0, 0.1);
+  cursor: pointer;
 }
 .navbar {
   display: flex;
@@ -81,9 +101,12 @@ hr {
 .nav-links a {
   text-decoration: none;
   color: #fff;
-  transition: color 0.3s;
+  padding: 20px 5px;
+  border-radius: 5px; /* lekko zaokrąglone rogi tła */
+  transition: background-color 0.3s, color 0.3s; /* animacja zmiany tła i koloru */
 }
 
 .nav-links a:hover {
-  color: #ffe23f;
+  color: #ffe23f; /* kolor tekstu po najechaniu */
+  background-color: rgba(255, 255, 255, 0.2); /* lekkie, przezroczyste tło */
 }
