@@ -2,7 +2,8 @@ body {
   /* background-image: url(https://img.freepik.com/darmowe-wektory/nowoczesny-styl-szary-zygzagowy-pas-abstrakcyjny-tapeta_1017-59367.jpg?semt=ais_hybrid&w=740&q=80);
   /* background-size: cover;
   background-repeat: no-repeat; */
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
+    'Helvetica Neue', sans-serif;
   background: linear-gradient(to right, #4d38d6, #d638af);
 }
 #par_1 {
@@ -11,7 +12,8 @@ body {
 }
 .par_2 {
   text-align: center;
-  margin: 50px auto;
+  margin-left: auto;
+  margin-right: auto;
   max-width: 800px;
   padding: 0 16px;
 }
@@ -30,24 +32,28 @@ hr {
   border-color: linear-gradient(90deg, #ff6ec7, #ff00ff); /* gradient różowy */
   box-shadow: 0 0 10px #ff6ec7, 0 0 20px #ff00ff, 0 0 30px #ff6ec7; /* neonowy glow */
   text-align: center;
-  width: 40%; /* <-- zmniejsza szerokość div */
-  max-width: 600px; /* <-- opcjonalnie ogranicza maksymalną szerokość */
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  padding: 20px; /* <-- opcjonalnie, żeby tekst nie przyklejał się do krawędzi */
+  max-width: 400px; /* <-- opcjonalnie ogranicza maksymalną szerokość */
+  padding: 30px;
   border: #d638aec4 solid 3px;
   transition: 0.3s;
 }
+/* wrapper centrowanie poziome */
+.center-wrapper {
+  margin-top: 2%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center; /* wszystko w środku będzie centrowane */
+  width: 50%;
+  max-width: 500px;
+}
 /* Kontener linkujący cały div */
 .clickable-div {
-  display: flex; /* pozwala łatwo wycentrować zawartość */
+  display: inline-block;
+  text-decoration: none;
   justify-content: center; /* poziome wyśrodkowanie */
   align-items: center; /* pionowe wyśrodkowanie */
   color: inherit; /* zachowuje kolor z diva */
   outline: none;
-  width: 100%; /* link zajmuje całą szerokość dostępnego miejsca */
 }
 
 /* Reset wszystkich stanów linku */
