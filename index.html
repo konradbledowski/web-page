@@ -1,63 +1,162 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pl">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Moja strona</title>
-    <link rel="stylesheet" href="style.css" />
+    <title>KBCS Elektro//Technika | Nowoczesne Instalacje</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body>
-    <header>
-      <nav class="navbar">
-        <div class="logo">MojaStrona.pl</div>
-        <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">O nas</a></li>
-          <li><a href="#article">Artykuły</a></li>
-          <li><a href="#services">Usługi</a></li>
-          <li><a href="#contact">Kontakt</a></li>
-          <li><a href="#footer">Stopka</a></li>
-        </ul>
-      </nav>
-    </header>
-    <main>
-      <div class="center-wrapper">
-        <a href="http://tryx.ct.ws/" class="clickable-div">
-          <div class="main_h">
-            <h1>Witaj na mojej stronie!</h1>
-            <p>Co chcesz począć wędrowcze?</p>
-          </div>
+    <header class="navbar">
+      <div class="nav-container">
+        <a href="#" class="logo">
+          <img src="assets/img/logo-kbcs-transparent.png" alt="KBCS Logo" id="navLogo" />
         </a>
+
+        <nav class="nav-menu">
+          <ul class="nav-list">
+            <li><a href="#home" class="nav-link">Home</a></li>
+            <li><a href="#uslugi" class="nav-link">Usługi</a></li>
+            <li><a href="#o-nas" class="nav-link">O nas</a></li>
+            <li><a href="#projekty" class="nav-link">Realizacje</a></li>
+            <li><a href="#kontakt" class="nav-link">Kontakt</a></li>
+          </ul>
+        </nav>
+
+        <div class="nav-actions">
+          <a href="#kontakt" class="btn-cta">Wycena</a>
+          <button class="burger"><span></span><span></span><span></span></button>
+        </div>
       </div>
-      <hr />
-      <article id="article">
-        <p class="par_2">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet sint, iusto, eligendi illum sapiente tenetur
-          dolore quod suscipit voluptatum similique tempora? Labore enim architecto voluptas animi nihil, doloremque
-          culpa cumque!
-        </p>
-      </article>
-      <hr />
-      <article>
-        <p class="par_2">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet sint, iusto, eligendi illum sapiente tenetur
-          dolore quod suscipit voluptatum similique tempora? Labore enim architecto voluptas animi nihil, doloremque
-          culpa cumque!
-        </p>
-      </article>
-      <hr />
-      <article>
-        <p class="par_2">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet sint, iusto, eligendi illum sapiente tenetur
-          dolore quod suscipit voluptatum similique tempora? Labore enim architecto voluptas animi nihil, doloremque
-          culpa cumque!
-        </p>
-      </article>
-    </main>
-    <footer id="footer">
-      <address>
-        <p>Gdynia, Poland</p>
-      </address>
-    </footer>
+    </header>
+
+    <section id="home" class="hero">
+      <div class="hero-content">
+        <p class="hero-tag">Inżynieria elektryczna 2026</p>
+        <h1>Napędzamy <span>przyszłość</span>.</h1>
+        <p class="hero-sub">Inteligentne instalacje i niezawodne technologie dla przemysłu i biznesu.</p>
+        <div class="hero-btns">
+          <a href="#projekty" class="btn-main">Nasze Projekty</a>
+          <a href="#uslugi" class="btn-ghost">Sprawdź Ofertę</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="uslugi" class="services">
+      <div class="container">
+        <div class="section-intro">
+          <p class="pre-title">Profesjonalne rozwiązania</p>
+          <h2 class="section-title">Nasza oferta</h2>
+        </div>
+
+        <div class="services-wrapper">
+          <a href="#" class="service-main-link">
+            <div class="item-overlay"></div>
+            <div class="item-content">
+              <span class="item-icon">⚡</span>
+              <h3>Instalacje Elektryczne</h3>
+              <p>
+                Oferujemy pełny zakres prac przy instalacjach elektrycznych dla przemysłu, biur oraz domów
+                jednorodzinnych.
+              </p>
+              <span class="item-cta-text">Dowiedz się więcej &rarr;</span>
+            </div>
+          </a>
+
+          <div class="services-subgrid">
+            <a href="#" class="service-card-link highlight">
+              <div class="item-content">
+                <span class="item-icon">🧠</span>
+                <h3>Smart / AI Home</h3>
+                <p>Inteligentne zarządzanie domem oparte na najnowszych technologiach AI.</p>
+              </div>
+            </a>
+
+            <a href="#" class="service-card-link">
+              <div class="item-content">
+                <span class="item-icon">📡</span>
+                <h3>Teletechnika</h3>
+                <p>Sieci LAN, światłowody oraz zaawansowane systemy CCTV.</p>
+              </div>
+            </a>
+
+            <a href="#" class="service-card-link">
+              <div class="item-content">
+                <span class="item-icon">📏</span>
+                <h3>Pomiary</h3>
+                <p>Okresowe i powykonawcze pomiary instalacji zgodnie z normami.</p>
+              </div>
+            </a>
+
+            <a href="#" class="service-card-link">
+              <div class="item-content">
+                <span class="item-icon">🔌</span>
+                <h3>Przyłącza</h3>
+                <p>Realizacja podłączeń obiektów do sieci energetycznej.</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="o-nas" class="about">
+      <div class="container">
+        <div class="about-wrapper">
+          <div class="about-text">
+            <div class="section-intro">
+              <p class="pre-title">O nas</p>
+              <h2 class="section-title">Doświadczenie, które robi różnicę</h2>
+            </div>
+            <div class="about-content">
+              <p>
+                KBCS to zespół specjalistów, dla których elektrotechnika to coś więcej niż praca. Od lat dostarczamy
+                bezpieczne i nowoczesne rozwiązania dla przemysłu oraz klientów indywidualnych.
+              </p>
+              <p>
+                Stawiamy na innowacje, czego dowodem jest nasze zaangażowanie w systemy <strong>Smart Home</strong> oraz
+                <strong>AI</strong>. Wybierając nas, stawiasz na precyzję, terminowość i bezpieczeństwo Twojej
+                instalacji.
+              </p>
+            </div>
+            <div class="about-features">
+              <div class="feature-item">
+                <span class="feature-icon">✔️</span>
+                <span>Uprawnienia SEP i certyfikaty</span>
+              </div>
+              <div class="feature-item">
+                <span class="feature-icon">✔️</span>
+                <span>Najwyższa jakość komponentów</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-stats">
+            <div class="stat-card">
+              <span class="stat-number">150+</span>
+              <span class="stat-label">Ukończonych projektów</span>
+            </div>
+            <div class="stat-card red-bg">
+              <span class="stat-number">10+</span>
+              <span class="stat-label">Lat doświadczenia</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-number">100%</span>
+              <span class="stat-label">Zadowolonych klientów</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-number">24/7</span>
+              <span class="stat-label">Wsparcie techniczne</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="assets/js/script.js"></script>
   </body>
 </html>
