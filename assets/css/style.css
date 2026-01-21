@@ -575,3 +575,320 @@ body {
     padding: 30px;
   }
 }
+
+/* --- PROJECTS SECTION --- */
+.projects {
+  padding: 100px 0;
+  background: #f4f4f4; /* Subtelne odcięcie od białych sekcji */
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 300px);
+  gap: 20px;
+}
+
+.project-item {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  background: var(--dark);
+  text-decoration: none; /* Usuwa podkreślenie linku */
+  display: block; /* Zapewnia poprawne renderowanie jako kontener */
+}
+
+/* Upewnij się, że tekst wewnątrz linku nie zmienia koloru na domyślny niebieski */
+.project-item h3,
+.project-item p {
+  color: white;
+}
+
+/* Ustawienie dużego kafelka (Projekt 1) */
+.project-item.large {
+  grid-column: 1 / 3;
+  grid-row: 1 / 3;
+}
+
+.project-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* Overlay z informacjami */
+.project-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.2) 60%, transparent 100%);
+  display: flex;
+  align-items: flex-end;
+  padding: 40px;
+  opacity: 1;
+  transition: var(--transition);
+}
+
+.project-info {
+  color: white;
+  z-index: 2;
+}
+
+.project-tag {
+  background: var(--primary);
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 5px 12px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  display: inline-block;
+  margin-bottom: 12px;
+}
+
+.project-item h3 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.project-item.large h3 {
+  font-size: 2.5rem;
+}
+
+.project-item p {
+  font-size: 0.95rem;
+  opacity: 0.8;
+  max-width: 400px;
+}
+
+/* Strzałka w dużym kafelku */
+.project-arrow {
+  position: absolute;
+  right: 40px;
+  bottom: 40px;
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.5rem;
+  transition: var(--transition);
+}
+
+/* HOVER EFFECTS */
+.project-item:hover img {
+  transform: scale(1.08);
+}
+
+.project-item:hover .project-arrow {
+  background: var(--primary);
+  border-color: var(--primary);
+  transform: rotate(-45deg);
+}
+
+/* RESPONSYWNOŚĆ */
+@media (max-width: 1100px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+  }
+
+  .project-item {
+    height: 350px;
+  }
+
+  .project-item.large {
+    grid-column: 1 / 3;
+    grid-row: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-item.large {
+    grid-column: 1;
+  }
+
+  .project-item {
+    height: 400px;
+  }
+
+  .project-item.large h3 {
+    font-size: 1.8rem;
+  }
+}
+
+/* --- CONTACT SECTION --- */
+.contact {
+  padding: 100px 0;
+  background: var(--white);
+}
+
+.contact-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr; /* Kafelki zajmują 1 część, formularz 1.5 części */
+  gap: 50px;
+  margin-top: 40px;
+  align-items: start; /* Wyrównuje elementy do góry */
+}
+
+/* Na mniejszych ekranach (np. telefony) ustawiamy jeden pod drugim */
+@media (max-width: 992px) {
+  .contact-wrapper {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.info-card {
+  display: flex; /* Zachowuje układ ikona + tekst */
+  align-items: center;
+  gap: 20px;
+  padding: 30px;
+  background: #f9f9f9;
+  border-radius: 20px;
+  transition: var(--transition);
+  border: 1px solid #eee;
+
+  /* MERGE: Dodatki dla tagu <a> */
+  text-decoration: none; /* Usuwa podkreślenie */
+  color: inherit; /* Dziedziczy kolor czcionki (nie będzie niebieski) */
+  cursor: pointer; /* Pokazuje rączkę po najechaniu */
+}
+
+.info-card:hover {
+  border-color: var(--primary);
+  background: #fff;
+  transform: translateX(10px);
+}
+
+.info-icon {
+  font-size: 1.5rem;
+  width: 50px;
+  height: 50px;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.info-details h4 {
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+  color: var(--dark);
+}
+
+.info-details p {
+  color: #666;
+  font-size: 0.95rem;
+}
+
+/* Formularz */
+.contact-form {
+  background: #fff;
+  padding: 40px;
+  border-radius: 24px;
+  border: 1px solid #eee;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  color: var(--dark);
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 15px;
+  border: 2px solid #f0f0f0;
+  border-radius: 12px;
+  font-family: inherit;
+  transition: var(--transition);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  background: #fff;
+}
+
+.contact-form .btn-main {
+  width: 100%;
+  border: none;
+  cursor: pointer;
+}
+
+/* FOOTER */
+.footer {
+  padding: 50px 0;
+  background: var(--dark);
+  color: #fff;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  opacity: 0.7;
+  font-size: 0.9rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 30px;
+}
+
+.footer-links {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-links a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* MOBILE */
+@media (max-width: 992px) {
+  .contact-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-form {
+    padding: 25px;
+  }
+}
