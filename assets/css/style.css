@@ -290,26 +290,30 @@ body {
   flex: 1;
   background: var(--dark);
   padding: 50px;
+  display: flex; /* Dodano, aby justify-content działało */
+  flex-direction: column; /* Ustawienie pionowe */
   justify-content: flex-end;
-  background-image: url('../img/hero-bg-subtle.png'); /* Upewnij się co do ścieżki */
+  background-image: url('../img/hero-bg-subtle.png');
   background-size: cover;
+  background-position: center;
+  position: relative; /* Kluczowe dla pozycjonowania overlay */
+  overflow: hidden;
+  color: #ffffff; /* Wymuszenie białego koloru dla czytelności */
+  text-decoration: none;
 }
 
 .service-main-link .item-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.85), transparent);
+  /* Zwiększono krycie gradientu (0.9), aby tekst był czytelniejszy */
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 10%, rgba(0, 0, 0, 0.4) 60%, transparent 100%);
   z-index: 1;
   transition: var(--transition);
 }
 
-.service-main-link:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-}
-
 .service-main-link:hover .item-overlay {
-  background: linear-gradient(to top, rgba(230, 0, 0, 0.8), transparent);
+  /* Zmiana koloru na hover - zachowujemy ciemniejszy dół */
+  background: linear-gradient(to top, rgba(230, 0, 0, 0.9) 20%, rgba(0, 0, 0, 0.6) 80%);
 }
 
 /* Podsiatka usług */
